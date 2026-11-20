@@ -1,0 +1,42 @@
+.exploration-viewport{position:absolute;inset:0;z-index:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;touch-action:pan-x;overscroll-behavior-x:contain;cursor:default}
+.exploration-viewport::-webkit-scrollbar{display:none}
+.exploration-world{position:relative;width:max(100%,calc(100svh * 1672 / 941));height:max(100%,calc(100vw * 941 / 1672));isolation:isolate}
+.world-background{position:absolute;inset:0;width:100%;height:100%;user-select:none;pointer-events:none}
+.world-target{position:absolute;display:block;border:0;border-radius:0;margin:0;padding:0;background:none;color:inherit;cursor:pointer;touch-action:pan-x;-webkit-tap-highlight-color:transparent;outline:none;z-index:2;isolation:isolate}
+.world-target:hover{filter:none}
+.world-target:disabled{opacity:1;filter:none;cursor:default;pointer-events:none}
+.world-target:before,.world-target:after{display:none}
+.world-target .target-focus{position:absolute;inset:4px;opacity:0;border:1px solid #ead5a488;box-shadow:0 0 22px #e3c88724,inset 0 0 18px #ffe7b01a;border-radius:45%;pointer-events:none;transition:opacity .2s ease}
+.world-target:focus-visible{outline:1px solid #efdfb4;outline-offset:5px}
+.world-target:focus-visible .target-focus,.show-explore-help .world-target .target-focus{opacity:.7}
+.world-target svg,.world-target img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none;fill:none;stroke:none}
+.world-target.person-target{z-index:5}
+.scene-actor{display:block;width:100%;height:100%;fill:none;stroke:none;pointer-events:none}
+.scene-dialogue-world{overflow:hidden;pointer-events:none;cursor:default}
+.scene-dialogue-world .target-focus{display:none}
+.world-person{filter:drop-shadow(1px 8px 5px #101c1a55);transition:filter .2s ease}
+.person-target:hover .world-person,.person-target:focus-visible .world-person{filter:drop-shadow(0 0 5px #f2d79c77) drop-shadow(1px 8px 5px #101c1a55)}
+.world-car{filter:drop-shadow(0 8px 5px #13201d66)}
+.world-prop{filter:drop-shadow(1px 3px 2px #15221d55)}
+.road-parked-car{position:absolute;left:10.76%;top:68%;width:31.1%;height:27.63%;object-fit:contain;pointer-events:none;filter:drop-shadow(0 8px 5px #13201d66)}
+.room-bag-cord{position:absolute;left:50.36%;top:67.38%;width:9.87%;height:16.47%;pointer-events:none;fill:none;stroke:none}
+.exploring .scene-art{display:none}
+.exploring .scene-shade{z-index:1;pointer-events:none;background:linear-gradient(180deg,#08160d66,transparent 21%,transparent 67%,#08160dbb)}
+.exploring.night .world-background{filter:brightness(.54) saturate(.7) hue-rotate(7deg)}
+.exploring.night .world-person{filter:brightness(.72)}
+.exploring .grain,.exploring .scene-top,.exploring .loading-mark{pointer-events:none}
+.pan-edge{position:fixed;top:auto;bottom:21px;z-index:7;border:0;padding:12px 7px;background:transparent;font-family:Georgia,serif;font-size:35px;line-height:1;color:#eee1bc77;text-shadow:0 2px 12px #12291f;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.pan-edge.left{left:4px}.pan-edge.right{right:4px}
+.can-pan-left .pan-edge.left,.can-pan-right .pan-edge.right{opacity:.65;pointer-events:auto}
+.pan-edge:hover,.pan-edge:focus-visible{opacity:1;color:#faebc7}
+.panning{cursor:grabbing}
+.explore-bottom{pointer-events:none}
+.explore-bottom button,.explore-bottom nav{pointer-events:auto}
+.scene-strap{pointer-events:none}
+.scene-strap span{background:transparent;text-shadow:0 2px 5px #000}
+.exploring .question-card{background:none}
+.exploring .advance-card:empty{display:none}
+@media(max-width:720px){.pan-edge{font-size:30px;padding:16px 7px}.scene-strap{bottom:135px}.scene-strap span{font-size:9px}.exploring .scene-top{max-width:70%}.exploring .explore-bottom{gap:9px}.world-target{min-width:24px;min-height:24px}}
+@media(prefers-reduced-motion:reduce){.world-person,.target-focus,.pan-edge{transition:none}}
+
+.guest-door-number{position:absolute;top:18%;padding:5px 12px;background:#594023;color:#e9c887;border:1px solid #b69252;border-radius:45%;font-family:Georgia,serif;font-size:18px;letter-spacing:.1em;box-shadow:0 2px 4px #100a0870;transform:translateX(-50%);pointer-events:none}.room17-number{left:7%}.room18-number{left:82.5%}
